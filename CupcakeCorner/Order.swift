@@ -47,7 +47,7 @@ class Order: Codable {
         return cost
     }
     
-    enum CodingKeys: String, CodingKeys {
+    enum CodingKeys: String, CodingKey {
         case _type = "type"
         case _quantity = "quantity"
         case _specialRequestEnabled = "specialRequestEnabled"
