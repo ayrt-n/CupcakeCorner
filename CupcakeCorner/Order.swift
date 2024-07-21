@@ -10,9 +10,26 @@ import Foundation
 @Observable
 class Order: Codable {
     static let types = ["Vanilla", "Strawberry", "Chocolate", "Rainbow"]
+    let saveKey = "orderDetails"
     
-    var type = 0
-    var quantity = 3
+    func save() {
+        let encoder = JSONEncoder()
+        
+        if let data = try? encoder.encode(self) {
+            UserDefaults.standard.set(data, forKey: saveKey)
+        }
+    }
+    
+    var type = 0 {
+        didSet {
+            save()
+        }
+    }
+    var quantity = 3 {
+        didSet {
+            save()
+        }
+    }
     
     var specialRequestEnabled = false {
         didSet {
@@ -20,15 +37,41 @@ class Order: Codable {
                 extraFrosting = false
                 addSprinkles = false
             }
+            save()
         }
     }
-    var extraFrosting = false
-    var addSprinkles = false
     
-    var name = ""
-    var streetAddress = ""
-    var city = ""
-    var zip = ""
+    var extraFrosting = false {
+        didSet {
+            save()
+        }
+    }
+    var addSprinkles = false {
+        didSet {
+            save()
+        }
+    }
+    
+    var name = "" {
+        didSet {
+            save()
+        }
+    }
+    var streetAddress = "" {
+        didSet {
+            save()
+        }
+    }
+    var city = "" {
+        didSet {
+            save()
+        }
+    }
+    var zip = "" {
+        didSet {
+            save()
+        }
+    }
     
     var hasValidAddress: Bool {
         if name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || streetAddress.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || city.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || zip.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
@@ -57,5 +100,33 @@ class Order: Codable {
         case _city = "city"
         case _streetAddress = "streetAddress"
         case _zip = "zip"
+    }
+    
+    init() {
+        if let savedItems = UserDefaults.standard.data(forKey: saveKey) {
+            if let decodedItems = try? JSONDecoder().decode(Order.self, from: savedItems) {
+                type = decodedItems.type
+                quantity = decodedItems.quantity
+                specialRequestEnabled = decodedItems.specialRequestEnabled
+                extraFrosting = decodedItems.extraFrosting
+                addSprinkles = decodedItems.addSprinkles
+                name = decodedItems.name
+                city = decodedItems.city
+                streetAddress = decodedItems.streetAddress
+                zip = decodedItems.zip
+                
+                return
+            }
+        }
+        
+        type = 0
+        quantity = 3
+        specialRequestEnabled = false
+        extraFrosting = false
+        addSprinkles = false
+        name = ""
+        city = ""
+        streetAddress = ""
+        zip = ""
     }
 }
