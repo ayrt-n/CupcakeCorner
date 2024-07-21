@@ -11,6 +11,9 @@
 		E8C88D432C4C394300307E01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C88D422C4C394300307E01 /* ContentView.swift */; };
 		E8C88D452C4C394500307E01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8C88D442C4C394500307E01 /* Assets.xcassets */; };
 		E8C88D482C4C394500307E01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8C88D472C4C394500307E01 /* Preview Assets.xcassets */; };
+		E8C88D4F2C4D2ED200307E01 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C88D4E2C4D2ED200307E01 /* Order.swift */; };
+		E8C88D512C4D30AF00307E01 /* AddressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C88D502C4D30AF00307E01 /* AddressView.swift */; };
+		E8C88D532C4D316800307E01 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C88D522C4D316800307E01 /* CheckoutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		E8C88D422C4C394300307E01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E8C88D442C4C394500307E01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8C88D472C4C394500307E01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E8C88D4E2C4D2ED200307E01 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		E8C88D502C4D30AF00307E01 /* AddressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressView.swift; sourceTree = "<group>"; };
+		E8C88D522C4D316800307E01 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,9 @@
 			children = (
 				E8C88D402C4C394300307E01 /* CupcakeCornerApp.swift */,
 				E8C88D422C4C394300307E01 /* ContentView.swift */,
+				E8C88D502C4D30AF00307E01 /* AddressView.swift */,
+				E8C88D522C4D316800307E01 /* CheckoutView.swift */,
+				E8C88D4E2C4D2ED200307E01 /* Order.swift */,
 				E8C88D442C4C394500307E01 /* Assets.xcassets */,
 				E8C88D462C4C394500307E01 /* Preview Content */,
 			);
@@ -137,6 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8C88D4F2C4D2ED200307E01 /* Order.swift in Sources */,
+				E8C88D512C4D30AF00307E01 /* AddressView.swift in Sources */,
+				E8C88D532C4D316800307E01 /* CheckoutView.swift in Sources */,
 				E8C88D432C4C394300307E01 /* ContentView.swift in Sources */,
 				E8C88D412C4C394300307E01 /* CupcakeCornerApp.swift in Sources */,
 			);
@@ -272,6 +284,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CupcakeCorner/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -300,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CupcakeCorner/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
